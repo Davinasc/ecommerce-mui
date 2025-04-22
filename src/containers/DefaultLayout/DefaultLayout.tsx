@@ -1,18 +1,27 @@
-import { PropsWithChildren } from 'react';
-import { Grid } from '@mui/material';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
-import Header from './Header/Header';
+import { ROUTES } from '@/constants';
 
-// import { LanguageSelector } from '@/components';
+import { Header } from './Header';
 
-export default function DefaultLayout({ children }: PropsWithChildren) {
+import { ContainerGrid, ContentGrid } from './styles';
+
+const isAuthenticated = true;
+
+export default function DefaultLayout() {
+  const { pathname } = useLocation();
+
+  if (!isAuthenticated) {
+    return <Navigate to={`${ROUTES.public.login.link}?next=${pathname}`} />;
+  }
+
   return (
-    <Grid container spacing={2}>
+    <ContainerGrid container spacing={2} as="main">
       <Header />
 
-      {children}
-    </Grid>
-
-    /* <LanguageSelector className="absolute right-2 top-2" /> */
+      <ContentGrid>
+        <Outlet />
+      </ContentGrid>
+    </ContainerGrid>
   );
 }

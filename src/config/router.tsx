@@ -1,20 +1,30 @@
-// import { Suspense } from 'react'
 import { RouteObject, createBrowserRouter } from 'react-router-dom';
 
+import { CartPage, HomePage, LoginPage, RegisterPage } from '@/pages';
 import { DefaultLayout } from '@/containers';
+import { ErrorBoundary } from '@/components';
+import { ROUTES, AUTH_BASE_PATH } from '@/constants';
 
-// function withSuspense(component: React.ReactNode, fallback: React.ReactNode = null) {
-//   return <Suspense fallback={fallback}>{component}</Suspense>
-// }
-
-export default function getRouter(routeBase = '/') {
+export default function getRouter(routeBase = ROUTES.private.home.path) {
   const rootRoute: RouteObject[] = [
-    { path: '/auth', element: null },
+    {
+      path: AUTH_BASE_PATH,
+      Component: null,
+      children: [
+        { path: ROUTES.public.login.path, Component: LoginPage },
+        { path: ROUTES.public.register.path, Component: RegisterPage },
+      ],
+    },
     {
       path: routeBase,
-      element: null,
-      errorElement: null,
-      children: [{ index: true, element: <DefaultLayout /> }],
+      Component: DefaultLayout,
+      errorElement: (
+        <ErrorBoundary error={new Error('An unexpected error occurred')} />
+      ),
+      children: [
+        { index: true, Component: HomePage },
+        { path: ROUTES.private.cart.path, Component: CartPage },
+      ],
     },
   ];
 

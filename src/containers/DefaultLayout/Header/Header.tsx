@@ -4,12 +4,15 @@ import {
   PersonOutlineOutlined as PersonOutlineOutlinedIcon,
   ShoppingCartOutlined as ShoppingCartOutlinedIcon,
 } from '@mui/icons-material';
+import { Link as RouterLink } from 'react-router-dom';
+
+import { ROUTES } from '@/constants';
 
 import HeaderProvider from './HeaderProvider';
 import { MobileDrawer } from './MobileDrawer';
+import { NavButton } from './NavButton';
 
 import { StyledAppBar, ToolbarContainerGrid } from './styles';
-import { NavButton } from './NavButton';
 
 interface ElevationScrollProps {
   children?: React.ReactElement<{ elevation?: number }>;
@@ -36,7 +39,12 @@ function HeaderComponent() {
             <ToolbarContainerGrid container>
               {/* Left side */}
               <Grid container spacing={0} alignItems="center">
-                <Typography>Logo</Typography>
+                <Typography
+                  component={RouterLink}
+                  to={ROUTES.private.home.link}
+                >
+                  Logo
+                </Typography>
 
                 <MobileDrawer />
               </Grid>
@@ -46,9 +54,15 @@ function HeaderComponent() {
                 <NavButton
                   label="Cart"
                   icon={ShoppingCartOutlinedIcon}
+                  to={ROUTES.private.cart.link}
                   notificationCount={5} // TODO: Add dynamic values
                 />
-                <NavButton label="Login" icon={PersonOutlineOutlinedIcon} />
+
+                <NavButton
+                  label="Login"
+                  icon={PersonOutlineOutlinedIcon}
+                  to={ROUTES.public.login.link}
+                />
               </Grid>
             </ToolbarContainerGrid>
           </Toolbar>

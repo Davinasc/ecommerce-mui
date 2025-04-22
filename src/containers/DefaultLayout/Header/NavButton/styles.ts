@@ -3,12 +3,18 @@ import {
   Badge,
   badgeClasses,
   Button,
+  ButtonProps,
   SvgIcon,
   SvgIconProps,
   Typography,
 } from '@mui/material';
 
-export const StyledButton = styled(Button)(
+type StyledButtonProps = ButtonProps & {
+  to?: string;
+  component?: React.ElementType;
+};
+
+export const StyledButton = styled(Button)<StyledButtonProps>(
   ({ theme: { spacing, breakpoints } }) => ({
     flexDirection: 'column',
     minWidth: 52,
