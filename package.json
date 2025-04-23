@@ -1,12 +1,12 @@
 {
-  "name": "extia-fe-assessment",
+  "name": "ecommerce-mui",
   "private": true,
   "version": "0.0.1",
   "type": "module",
   "author": "Davi Nascimento",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Davinasc/extia-fe-assessment-davi"
+    "url": "https://github.com/Davinasc/ecommerce-mui"
   },
   "scripts": {
     "dev": "vite --mode=development --host",
