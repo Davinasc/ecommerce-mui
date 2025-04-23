@@ -1,6 +1,7 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 import { ROUTES } from '@/constants';
+import { CartProvider } from '@/contexts';
 
 import { Header } from './Header';
 
@@ -16,12 +17,14 @@ export default function DefaultLayout() {
   }
 
   return (
-    <ContainerGrid spacing={2} as="main">
-      <Header />
+    <CartProvider>
+      <ContainerGrid spacing={2} as="main">
+        <Header />
 
-      <ContentGrid>
-        <Outlet />
-      </ContentGrid>
-    </ContainerGrid>
+        <ContentGrid>
+          <Outlet />
+        </ContentGrid>
+      </ContainerGrid>
+    </CartProvider>
   );
 }

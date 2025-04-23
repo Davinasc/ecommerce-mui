@@ -1,43 +1,23 @@
-import {
-  Box,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Typography,
-} from '@mui/material';
+import { Box, Divider, List, ListItem, ListItemButton, ListItemText, Typography } from '@mui/material';
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material';
 
 import HeaderProvider from '../HeaderProvider';
-import { useHeaderContext } from '../context';
+import { useHeaderContext } from '../HeaderContext';
 import { navItems } from '../constants';
 
-import {
-  CloseButton,
-  MenuButton,
-  StyledBackdrop,
-  StyledDrawer,
-} from './styles';
+import { CloseButton, MenuButton, StyledBackdrop, StyledDrawer } from './styles';
 
 function HeaderComponent() {
   const { drawerOpen, toggleDrawerHandler } = useHeaderContext();
 
-  const closeButtonClickHandler = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
+  const closeButtonClickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.stopPropagation();
     toggleDrawerHandler();
   };
 
   return (
     <>
-      <MenuButton
-        color="inherit"
-        aria-label="open drawer"
-        onClick={toggleDrawerHandler}
-        startIcon={<MenuIcon />}
-      >
+      <MenuButton color="inherit" aria-label="open drawer" onClick={toggleDrawerHandler} startIcon={<MenuIcon />}>
         <Typography>Menu</Typography>
       </MenuButton>
 
@@ -63,11 +43,7 @@ function HeaderComponent() {
       </StyledDrawer>
 
       <StyledBackdrop open={drawerOpen} onClick={toggleDrawerHandler}>
-        <CloseButton
-          color="inherit"
-          aria-label="close drawer"
-          onClick={closeButtonClickHandler}
-        >
+        <CloseButton color="inherit" aria-label="close drawer" onClick={closeButtonClickHandler}>
           <CloseIcon />
         </CloseButton>
       </StyledBackdrop>

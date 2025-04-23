@@ -1,11 +1,15 @@
 import useSWR from 'swr';
-
-import { PRODUCTS_ENDPOINTS } from '@/constants';
-import { productsApi } from '@/services/api';
-import { ProductListItem } from '@/types/api';
 import { Button, Card, CardActions, CardContent, CardMedia, CircularProgress, Grid, Typography } from '@mui/material';
 
+import { PageTitle } from '@/components/PageTitle';
+import { PRODUCTS_ENDPOINTS } from '@/constants';
+import { useCartContext } from '@/contexts';
+import { productsApi } from '@/services/api';
+import type { Product } from '@/types/api';
+
 export default function HomePage() {
+  const { addProduct } = useCartContext();
+
   const { data, error, isLoading } = useSWR(PRODUCTS_ENDPOINTS.list, productsApi.list);
 
   const hasError = !isLoading && error;
@@ -13,8 +17,8 @@ export default function HomePage() {
   const hasData = !isLoading && !error && data && data.length > 0;
 
   return (
-    <div>
-      <h1>All Products</h1>
+    <>
+      <PageTitle text="All Products" />
 
       <Grid container spacing={2}>
         {isLoading && (
@@ -38,7 +42,7 @@ export default function HomePage() {
         )}
 
         {hasData &&
-          data.map((product: ProductListItem) => (
+          data.map((product: Product) => (
             <Grid size={{ xs: 12, sm: 6, md: 3 }} key={product.id}>
               <Card sx={{ maxWidth: 345 }}>
                 <CardMedia component="img" alt={product.name} height="140" image={product.imageUrl} />
@@ -54,12 +58,14 @@ export default function HomePage() {
                 </CardContent>
 
                 <CardActions>
-                  <Button size="small">Add to cart</Button>
+                  <Button size="small" onClick={() => addProduct(product)}>
+                    Add to cart
+                  </Button>
                 </CardActions>
               </Card>
             </Grid>
           ))}
       </Grid>
-    </div>
+    </>
   );
 }

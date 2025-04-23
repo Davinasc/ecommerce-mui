@@ -1,22 +1,122 @@
 [
-  { "id": "1", "name": "Product 1", "price": 10.99, "imageUrl": "/images/product1.jpg" },
-  { "id": "2", "name": "Product 2", "price": 12.49, "imageUrl": "/images/product2.jpg" },
-  { "id": "3", "name": "Product 3", "price": 8.99, "imageUrl": "/images/product3.jpg" },
-  { "id": "4", "name": "Product 4", "price": 15.0, "imageUrl": "/images/product4.jpg" },
-  { "id": "5", "name": "Product 5", "price": 7.5, "imageUrl": "/images/product5.jpg" },
-  { "id": "6", "name": "Product 6", "price": 19.99, "imageUrl": "/images/product6.jpg" },
-  { "id": "7", "name": "Product 7", "price": 11.25, "imageUrl": "/images/product7.jpg" },
-  { "id": "8", "name": "Product 8", "price": 13.75, "imageUrl": "/images/product8.jpg" },
-  { "id": "9", "name": "Product 9", "price": 9.99, "imageUrl": "/images/product9.jpg" },
-  { "id": "10", "name": "Product 10", "price": 14.99, "imageUrl": "/images/product10.jpg" },
-  { "id": "11", "name": "Product 11", "price": 16.49, "imageUrl": "/images/product11.jpg" },
-  { "id": "12", "name": "Product 12", "price": 18.0, "imageUrl": "/images/product12.jpg" },
-  { "id": "13", "name": "Product 13", "price": 6.99, "imageUrl": "/images/product13.jpg" },
-  { "id": "14", "name": "Product 14", "price": 17.25, "imageUrl": "/images/product14.jpg" },
-  { "id": "15", "name": "Product 15", "price": 20.0, "imageUrl": "/images/product15.jpg" },
-  { "id": "16", "name": "Product 16", "price": 21.99, "imageUrl": "/images/product16.jpg" },
-  { "id": "17", "name": "Product 17", "price": 22.5, "imageUrl": "/images/product17.jpg" },
-  { "id": "18", "name": "Product 18", "price": 23.75, "imageUrl": "/images/product18.jpg" },
-  { "id": "19", "name": "Product 19", "price": 24.99, "imageUrl": "/images/product19.jpg" },
-  { "id": "20", "name": "Product 20", "price": 25.0, "imageUrl": "/images/product20.jpg" }
+  {
+    "id": "1",
+    "name": "Wireless Headphones",
+    "price": 59.99,
+    "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "2",
+    "name": "Smart Watch",
+    "price": 129.99,
+    "imageUrl": "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "3",
+    "name": "DSLR Camera",
+    "price": 499.99,
+    "imageUrl": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "4",
+    "name": "Bluetooth Speaker",
+    "price": 39.99,
+    "imageUrl": "https://images.unsplash.com/photo-1512446733611-9099a758e63e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "5",
+    "name": "Laptop",
+    "price": 899.99,
+    "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "6",
+    "name": "Tablet",
+    "price": 299.99,
+    "imageUrl": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "7",
+    "name": "Smartphone",
+    "price": 699.99,
+    "imageUrl": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "8",
+    "name": "Gaming Mouse",
+    "price": 49.99,
+    "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "9",
+    "name": "Mechanical Keyboard",
+    "price": 89.99,
+    "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "10",
+    "name": "4K Monitor",
+    "price": 299.99,
+    "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "11",
+    "name": "Fitness Tracker",
+    "price": 79.99,
+    "imageUrl": "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "12",
+    "name": "VR Headset",
+    "price": 399.99,
+    "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "13",
+    "name": "Portable SSD",
+    "price": 99.99,
+    "imageUrl": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "14",
+    "name": "Drone",
+    "price": 599.99,
+    "imageUrl": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "15",
+    "name": "Action Camera",
+    "price": 199.99,
+    "imageUrl": "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "16",
+    "name": "Smart Home Hub",
+    "price": 129.99,
+    "imageUrl": "https://images.unsplash.com/photo-1512446733611-9099a758e63e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "17",
+    "name": "E-Reader",
+    "price": 89.99,
+    "imageUrl": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "18",
+    "name": "Wireless Charger",
+    "price": 29.99,
+    "imageUrl": "https://images.unsplash.com/photo-1512446733611-9099a758e63e?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "19",
+    "name": "Noise Cancelling Earbuds",
+    "price": 149.99,
+    "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    "id": "20",
+    "name": "Smart Light Bulb",
+    "price": 19.99,
+    "imageUrl": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+  }
 ]

@@ -1,8 +1,8 @@
-export interface ProductListItem {
+export interface Product {
   id: string;
   name: string;
   price: number;
   imageUrl: string;
 }
 
-export type ProductListResponse = ProductListItem[];
+export type ProductListResponse = Product[];

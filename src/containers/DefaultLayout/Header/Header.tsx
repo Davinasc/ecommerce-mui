@@ -13,6 +13,7 @@ import { MobileDrawer } from './MobileDrawer';
 import { NavButton } from './NavButton';
 
 import { StyledAppBar, ToolbarContainerGrid } from './styles';
+import { useCartContext } from '@/contexts';
 
 interface ElevationScrollProps {
   children?: React.ReactElement<{ elevation?: number }>;
@@ -25,12 +26,12 @@ function ElevationScroll({ children }: ElevationScrollProps) {
     target: undefined,
   });
 
-  return children
-    ? cloneElement(children, { elevation: trigger ? 4 : 0 })
-    : null;
+  return children ? cloneElement(children, { elevation: trigger ? 4 : 0 }) : null;
 }
 
 function HeaderComponent() {
+  const { productsCount } = useCartContext();
+
   return (
     <Grid container>
       <ElevationScroll>
@@ -39,10 +40,7 @@ function HeaderComponent() {
             <ToolbarContainerGrid container>
               {/* Left side */}
               <Grid container spacing={0} alignItems="center">
-                <Typography
-                  component={RouterLink}
-                  to={ROUTES.private.home.link}
-                >
+                <Typography component={RouterLink} to={ROUTES.private.home.link}>
                   Logo
                 </Typography>
 
@@ -55,14 +53,10 @@ function HeaderComponent() {
                   label="Cart"
                   icon={ShoppingCartOutlinedIcon}
                   to={ROUTES.private.cart.link}
-                  notificationCount={5} // TODO: Add dynamic values
+                  notificationsCount={productsCount}
                 />
 
-                <NavButton
-                  label="Login"
-                  icon={PersonOutlineOutlinedIcon}
-                  to={ROUTES.public.login.link}
-                />
+                <NavButton label="Login" icon={PersonOutlineOutlinedIcon} to={ROUTES.public.login.link} />
               </Grid>
             </ToolbarContainerGrid>
           </Toolbar>
