@@ -16,7 +16,7 @@ export default function DefaultLayout() {
   }
 
   return (
-    <ContainerGrid container spacing={2} as="main">
+    <ContainerGrid spacing={2} as="main">
       <Header />
 
       <ContentGrid>
